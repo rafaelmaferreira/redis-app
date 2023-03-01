@@ -16,6 +16,14 @@ pipeline {
                 sh 'sleep 10'
             }
         }
+        stage('Sonarqube validation'){
+            steps{
+                script{
+                    scannerHome = tool 'sonar-scanner';
+                }
+                withSonarQubeEnv('')
+            }
+        } 
         stage('teste da aplicação'){
             steps{
                 sh 'chmod +x teste-app.sh'
