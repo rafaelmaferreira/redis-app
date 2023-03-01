@@ -18,7 +18,8 @@ pipeline {
         }
         stage('teste da aplicação'){
             steps{
-                sh 'teste-app.ssh'
+                sh 'chmod +x teste-app.sh'
+                sh './teste-app.sh'
             }
         }        
     }   
