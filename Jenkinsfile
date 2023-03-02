@@ -21,7 +21,8 @@ pipeline {
                 script{
                     scannerHome = tool 'sonar-scanner';
                 }
-                withSonarQubeEnv('')
+                withSonarQubeEnv('sonar-server'){
+                    sh "$(scannerHome)/bin/sonar-scanner "
             }
         } 
         stage('teste da aplicação'){
