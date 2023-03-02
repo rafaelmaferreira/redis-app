@@ -22,7 +22,7 @@ pipeline {
                     scannerHome = tool 'sonar-scanner';
                 }
                 withSonarQubeEnv('sonar-server'){
-                    sh "$(scannerHome)/bin/sonar-scanner -Dsonar.projectkey=redis-app -Dsonar.sources=. -Dsonar.host.url= "http://192.168.1.6" -Dsonar.login="10e2c73bb10b3e781f3c9802a4a087622f11d519""
+                    sh "$(scannerHome)/bin/sonar-scanner -Dsonar.projectkey=redis-app -Dsonar.sources=. -Dsonar.host.url= "http://192.168.1.6" -Dsonar.login="admin""
             }
         } 
         stage('teste da aplicação'){
